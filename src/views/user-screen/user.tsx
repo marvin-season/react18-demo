@@ -10,8 +10,6 @@ interface UserProps {
 }
 
 const UserComp = ({ user }: UserProps) => {
-  console.log("ss", user);
-
   return (
     <>
       <div>

@@ -1,5 +1,5 @@
 import SearchPanel from "components/search-panel";
-import useDebounce from "hooks";
+import { useDebounce } from "hooks";
 import React, { useEffect, useState } from "react";
 import qs from "qs";
 import { cleanObject } from "utils";
@@ -19,7 +19,6 @@ const UserScreen = () => {
       .then((res) => res.json())
       .then((response) => {
         setUserList(response || []);
-        console.log("aa", userList);
       });
   }, [debounceValue]);
 
@@ -27,8 +26,8 @@ const UserScreen = () => {
     <>
       <SearchPanel keyworld={value} setKeyworld={setValue} />
 
-      {userList.map((user) => (
-        <UserComp user={user}></UserComp>
+      {userList.map((user, index) => (
+        <UserComp key={index} user={user}></UserComp>
       ))}
     </>
   );

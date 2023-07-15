@@ -1,4 +1,9 @@
-const SearchPanel = ({ keyworld, setKeyworld }) => {
+interface SearchPanelProps {
+  keyworld: string;
+  setKeyworld: (keyworld: string) => void;
+}
+
+const SearchPanel = ({ keyworld, setKeyworld }: SearchPanelProps) => {
   return (
     <>
       <input

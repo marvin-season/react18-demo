@@ -10,6 +10,7 @@ export const LoginScreen = () => {
       body: JSON.stringify(params),
     }).then(async (response: Response) => {
       if (response.ok) {
+        console.log(response);
       }
     });
   };

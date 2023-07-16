@@ -36,7 +36,7 @@ export const LoginScreen = () => {
           <input type="text" id="password" />
         </div>
         <div>
-          <button type="submit">提交</button>
+          <button type="submit">登录</button>
         </div>
       </form>
     </>

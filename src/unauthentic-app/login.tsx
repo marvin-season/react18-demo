@@ -1,7 +1,7 @@
 import { FormEvent } from "react";
 import { login } from "context/auth-provider";
 export const LoginScreen = () => {
-  const handlerSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handlerSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const username = (event.currentTarget.elements[0] as HTMLInputElement)
@@ -9,7 +9,8 @@ export const LoginScreen = () => {
     const password = (event.currentTarget.elements[1] as HTMLInputElement)
       .value;
 
-    login({ username, password });
+    await login({ username, password });
+    window.location.reload();
   };
   return (
     <>

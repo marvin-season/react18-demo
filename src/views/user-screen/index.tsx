@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react";
 import qs from "qs";
 import { cleanObject } from "utils";
 import UserComp from "./user";
+import { Button } from "antd";
+import { useAuth } from "context/auth-context";
 const UserScreen = () => {
   const [value, setValue] = useState("");
   const [userList, setUserList] = useState([]);
@@ -22,8 +24,11 @@ const UserScreen = () => {
       });
   }, [debounceValue]);
 
+  const { logout } = useAuth();
+
   return (
     <>
+      <Button onClick={logout}>logout</Button>
       <SearchPanel keyworld={value} setKeyworld={setValue} />
 
       {userList.map((user, index) => (

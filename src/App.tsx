@@ -3,10 +3,10 @@ import "./App.css";
 import UnauthenticApp from "unauthentic-app";
 import { useAuth } from "context/auth-context";
 import UserScreen from "views/user-screen";
+import { useRequest } from "utils/http";
 function App() {
   const { user } = useAuth();
-  console.log(user);
-
+  const request = useRequest();
   return (
     <div className="App">
       {user?.username}

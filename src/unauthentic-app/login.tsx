@@ -1,19 +1,6 @@
 import { FormEvent } from "react";
-
+import { login } from "context/auth-provider";
 export const LoginScreen = () => {
-  const login = (params: { username: string; password: string }) => {
-    fetch(`http://localhost:3001/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(params),
-    }).then(async (response: Response) => {
-      if (response.ok) {
-        console.log(response);
-      }
-    });
-  };
   const handlerSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 

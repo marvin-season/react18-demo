@@ -3,18 +3,19 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { loadDevTools } from "jira-dev-tool";
+import { AppProviders } from "context";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
 );
 
-loadDevTools(() =>
-  root.render(
+root.render(
+  <AppProviders>
     <React.StrictMode>
       <App />
-    </React.StrictMode>,
-  ),
+    </React.StrictMode>
+    ,
+  </AppProviders>,
 );
 
 // If you want to start measuring performance in your app, pass ViewA function
